@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {render} from 'react-dom';
+import App from './components/App'
 
-const Test = () => <div>HELLO WORLD</div>;
-
-render(<Test />, document.querySelector('#root'));
+render(<App />, document.querySelector('#root'));
