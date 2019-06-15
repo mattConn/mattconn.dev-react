@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Header from './Header';
+// import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
 export default class App extends Component{
     navLinks = {
@@ -14,7 +16,7 @@ export default class App extends Component{
 
     render(){
         return (
-            <div id="wrapper">
+            <div id="wrapper" className="container">
                 <Header navLinks = {this.navLinks} />
             </div>
         );
