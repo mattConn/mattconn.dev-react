@@ -65,6 +65,10 @@ module.exports = {
 		]
 	},
 
+	devServer: {
+		historyApiFallback: true
+	},
+
 	output: {
 		chunkFilename: '[name].[chunkhash].js',
 		filename: '[name].[chunkhash].js'

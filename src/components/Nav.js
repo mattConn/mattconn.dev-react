@@ -1,13 +1,13 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const renderLink = (url, text) =>  (
     <li className="nav-item" key={`navLink-${text}`}>
-        <a className="nav-link" href={url}>{text}</a>
+        <Link className="nav-link" to={url}>{text}</Link>
     </li>
 );
 
-function Nav(props){
-    const {navLinks} = props;
+function Nav({navLinks}){
     return (
     <nav className="navbar navbar-expand-lg bg-light">
         <ul className="navbar-nav">
