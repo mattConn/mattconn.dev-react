@@ -9,13 +9,13 @@ import NotFound from '../pages/NotFound';
 
 export default class App extends Component{
     navLinks = {
-        Home: '/',
-        Resume: '/resume',
-        Portfolio: 'portfolio',
-        GitHub: 'https://github.com/mattConn/',
-        LinkedIn: 'https://www.linkedin.com/in/mattconndev/',
-        Twitter: 'https://twitter.com/mattconndev',
-        Blog: 'https://medium.com/@mattconndev'
+        Home: {url: '/', exitLink: false},
+        Resume: {url: '/resume', exitLink: false},
+        Portfolio: {url: 'portfolio', exitLink: false},
+        GitHub: {url: 'https://github.com/mattConn/', exitLink: true},
+        LinkedIn: {url: 'https://www.linkedin.com/in/mattconndev/', exitLink: true},
+        Twitter: {url: 'https://twitter.com/mattconndev', exitLink: true},
+        Blog: {url: 'https://medium.com/@mattconndev', exitLink: true}
     };
 
     render(){

@@ -1,11 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-const renderLink = (url, text) =>  (
-    <li className="nav-item" key={`navLink-${text}`}>
-        <Link className="nav-link" to={url}>{text}</Link>
-    </li>
-);
+class NavLink extends Component {
+
+    renderLink = (url, text, exitLink) => {
+        if (exitLink)
+            return <a className="nav-link" href={url} target="_blank">{text}</a>
+        else
+            return <Link className="nav-link" to={url}>{text}</Link>
+    }
+
+    render(){
+        const {url, text, exitLink} = this.props;
+        return (
+            <li className="nav-item">
+                {this.renderLink(url, text, exitLink)}
+            </li>
+        );
+    }
+
+}
 
 function Nav({navLinks}){
     return (
@@ -13,7 +27,7 @@ function Nav({navLinks}){
         <ul className="navbar-nav">
         {
             Object.keys(navLinks).map((key)=>
-                renderLink(navLinks[key],key)
+                <NavLink url={navLinks[key].url} text={key} exitLink={navLinks[key].exitLink} key={`NavLink-${key}`}/>
             )
         }
         </ul>
