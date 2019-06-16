@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import Header from './Header';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-
-// import charlieWebpage from '../../public/images/portfolio/charlie-webpage-tldr.png';
+import charlieWebpage from '../../public/images/portfolio/charlie-webpage-tldr.png';
 
 
 import About from './pages/About';
@@ -23,7 +22,7 @@ export default class App extends Component{
     };
 
     portfolioLinks = {
-        CharlieWebpage: {image: '/images/portfolio/charlie-webpage-tldr.png', title: 'Charlie Webpage "TL;DR"', copy: 'charlie copy'}
+        CharlieWebpage: {image: charlieWebpage, title: 'Charlie Webpage "TL;DR"', copy: 'charlie copy'}
     };
 
     render(){
