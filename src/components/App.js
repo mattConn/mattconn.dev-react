@@ -3,9 +3,13 @@ import Header from './Header';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import About from '../pages/About';
-import Resume from '../pages/Resume';
-import NotFound from '../pages/NotFound';
+// import charlieWebpage from '../../public/images/portfolio/charlie-webpage-tldr.png';
+
+
+import About from './pages/About';
+import Resume from './pages/Resume';
+import Portfolio from './pages/Portfolio';
+import NotFound from './pages/NotFound';
 
 export default class App extends Component{
     navLinks = {
@@ -18,14 +22,19 @@ export default class App extends Component{
         Blog: {url: 'https://medium.com/@mattconndev', exitLink: true}
     };
 
+    portfolioLinks = {
+        CharlieWebpage: {image: '/images/portfolio/charlie-webpage-tldr.png', title: 'Charlie Webpage "TL;DR"', copy: 'charlie copy'}
+    };
+
     render(){
         return (
-            <div id="wrapper" className="container">
+            <div className="container">
                 <BrowserRouter>
                     <Header navLinks = {this.navLinks} />
                         <Switch>
                             <Route path="/" exact component={About} />
                             <Route path="/resume" component={Resume} />
+                            <Route path="/portfolio" component={()=><Portfolio portfolioLinks={this.portfolioLinks} />} />
                             <Route component={NotFound} />
                         </Switch>
                 </BrowserRouter>
