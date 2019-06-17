@@ -1,4 +1,5 @@
 import React from 'react';
+import Page from './Page';
 
 const PortfolioCard = ({ image, title, copy }) => {
     return (
@@ -11,14 +12,18 @@ const PortfolioCard = ({ image, title, copy }) => {
     );
 }
 
-const Portfolio = ({portfolioLinks}) => {
-    return (
-        Object.keys(portfolioLinks).map((key) => {
-            const { image, title, copy } = portfolioLinks[key];
 
-            return <PortfolioCard key={`portfolioCard-${title}`} image={image} title={title} copy={copy} />
-        })
-    )
+export default class Portfolio extends Page {
+    title = 'Portfolio';
+
+    render() {
+        const { portfolioLinks } = this.props;
+        return (
+            Object.keys(portfolioLinks).map((key) => {
+                const { image, title, copy } = portfolioLinks[key];
+
+                return <PortfolioCard key={`portfolioCard-${title}`} image={image} title={title} copy={copy} />
+            })
+        )
+    }
 }
-
-export default Portfolio;
