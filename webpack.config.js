@@ -99,6 +99,12 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './public/index.html'
-		})
+		}),
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery',
+			'window.jQuery': 'jquery',
+			Popper: 'popper.js'
+		  })
 	]
 };

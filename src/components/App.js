@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from './Header';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.css';
+
 
 // portfolio images
 import charlieWebpage from '../../public/images/portfolio/charlie-webpage-tldr.png';
