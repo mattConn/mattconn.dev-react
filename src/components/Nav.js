@@ -5,9 +5,9 @@ class NavLink extends Component {
 
     renderLink = (url, text, exitLink) => {
         if (exitLink)
-            return <a className="nav-link" href={url} target="_blank">{text}</a>
+            return <a className="nav-link text-dark" href={url} target="_blank">{text}</a>
         else
-            return <Link className="nav-link" to={url}>{text}</Link>
+            return <Link className="nav-link text-dark" to={url}>{text}</Link>
     }
 
     render(){
