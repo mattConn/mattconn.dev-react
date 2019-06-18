@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import Header from './Header';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
+
+// portfolio images
 import charlieWebpage from '../../public/images/portfolio/charlie-webpage-tldr.png';
+import casaApicii from '../../public/images/portfolio/casa-apicii.png';
 
 
 import About from './pages/About';
@@ -12,7 +15,7 @@ import NotFound from './pages/NotFound';
 
 export default class App extends Component{
     navLinks = {
-        Home: {url: '/', exitLink: false},
+        About: {url: '/', exitLink: false},
         Resume: {url: '/resume', exitLink: false},
         Portfolio: {url: 'portfolio', exitLink: false},
         GitHub: {url: 'https://github.com/mattConn/', exitLink: true},
@@ -22,7 +25,9 @@ export default class App extends Component{
     };
 
     portfolioLinks = {
-        CharlieWebpage: {image: charlieWebpage, title: 'Charlie Webpage "TL;DR"', copy: 'charlie copy'}
+        charliewebpage: {image: charlieWebpage, title: 'Charlie Webpage "TL;DR"', copy: 'charlie copy'},
+        Foo: {image: 'test image', title: 'test title', copy: 'test copy'},
+        Bar: {image: 'test image', title: 'test title', copy: 'test copy'},
     };
 
     render(){
