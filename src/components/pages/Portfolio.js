@@ -1,10 +1,16 @@
 import React from 'react';
 import Page from './Page';
 
-const PortfolioCard = ({ image, title, copy }) => {
+const PortfolioCard = ({ image, title, copy, style}) => {
     return (
-        <div className="col-lg card m-4" key={`portfolioCard-${title}`}>
+        <div
+            style={style || {}}
+            className="col-lg card m-4"
+            key={`portfolioCard-${title}`}
+        >
             <img className="img-fluid rounded" src={image} alt={`Image of "${title}" project.`} />
+
+            <h3>{title}</h3>
             <section className="copy">
                 <p>{copy}</p>
             </section>
@@ -30,14 +36,20 @@ export default class Portfolio extends Page {
             })
         )
 
+        // add spacer card if odd number of entries
+        if(cards.length % 2 !== 0){
+            cards.push(
+                <PortfolioCard style={{visibility: 'hidden'}} key={`portfolioCard-spacer`} image={null} title={'spacer'} copy={null} />
+            );
+        }
+
         // portfolio card rows
         let rows = [];
         for(let i=0; i < cards.length; i+=2){
             rows.push(
-                <div className="row">
+                <div className="row" key={`portfolioRow-${i/2 + 1}`}>
                     {cards[i]}
-                    {/* {(i+1 >= cards.length ? <div style={{visibility: 'hidden'}} className="col-lg card m-4 foo"></div> : cards[i+1])} */}
-                    {cards[i+1] || <div style={{visibility: 'hidden'}} className="col-lg card m-4 foo"></div> }
+                    {cards[i+1]}
                 </div>
             );
         }

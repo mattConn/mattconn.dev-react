@@ -6,6 +6,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 // portfolio images
 import charlieWebpage from '../../public/images/portfolio/charlie-webpage-tldr.png';
 import casaApicii from '../../public/images/portfolio/casa-apicii.png';
+import margauxNY from '../../public/images/portfolio/margaux.png';
+import followTheMoney from '../../public/images/portfolio/follow-the-money.png';
+import defyHunger from '../../public/images/portfolio/defy-hunger.png';
 
 
 import About from './pages/About';
@@ -26,8 +29,10 @@ export default class App extends Component{
 
     portfolioLinks = {
         charliewebpage: {image: charlieWebpage, title: 'Charlie Webpage "TL;DR"', copy: 'charlie copy'},
-        Foo: {image: 'test image', title: 'test title', copy: 'test copy'},
-        Bar: {image: 'test image', title: 'test title', copy: 'test copy'},
+        casaApicii: {image: casaApicii, title: 'Casa Apicii', copy: 'casa copy'},
+        margauxNY: {image: margauxNY, title: 'Margaux NY', copy: 'margaux copy'},
+        followTheMoney: {image: followTheMoney, title: 'Follow The Money', copy: 'ftm copy'},
+        defyHunger: {image: defyHunger, title: 'Defy Hunger Together', copy: 'defy hunger copy'},
     };
 
     render(){
